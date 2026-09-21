@@ -22,7 +22,7 @@ class RigController{
         }
 
         Position operator++(Position& position, int) {
-            StackID tmp(position);
+            Position tmp(position);
             ++position;
             return tmp;
         }
