@@ -72,52 +72,52 @@ RigController::Position RigController::nextPosition(){
     return this->state;
 }
 
-rigcontroller::Position RigController::returnToStart(){
+Rigcontroller::Position RigController::returnToStart(){
 
     switch(this->state){
-        case: CardOne
+        case CardOne:
             break;
-        case: BugOne
+        case BugOne:
             //Move up one
             stackMove(this->stackPort, 3.0, 1.0, 0, 0);
             break;
-        case: CardTwo
+        case CardTwo:
             //Move left one
             stackMove(this->stackPort, 6.0, 1.0, 1, 1);
             break;
-        case: BugTwo
+        case BugTwo:
             //Move up one and left one
             stackMoveDiagonal(this->stackPort, 3.0, 1.0, 0, 6.0, 1.0, 1);
             break;
-        case: CardThree
+        case CardThree:
             //Move left two
             stackMove(this->stackPort, 12.0, 1.0, 1, 1);
             break;
-        case: BugThree
+        case BugThree:
             //Move up one and left two
             stackMoveDiagonal(this->stackPort, 3.0, 1.0, 0, 12.0, 1.0, 1);
             break;
-        case CardFour
+        case CardFour:
             //Move up two
             stackMove(this->stackPort, 6.0, 1.0, 0, 0);
             break;
-        case BugFour
+        case BugFour:
             //Move up three
             stackMove(this->stackPort, 9.0, 1.0, 0, 0);
             break;
-        case CardFive
+        case CardFive:
             //Move up two and left one
             stackMoveDiagonal(this->stackPort, 6.0, 1.0, 0, 6.0, 1.0, 1);
             break;
-        case BugFive
+        case BugFive:
             //Move up three and left one
             stackMoveDiagonal(this->stackPort, 9.0, 1.0, 0, 6.0, 1.0, 1);
             break;
-        case CardSix
+        case CardSix:
             //Move up two and left two
             stackMoveDiagonal(this->stackPort, 6.0, 1.0, 0, 12.0, 1.0, 1);
             break;
-        case BugSix
+        case BugSix:
             //Move up three and left two
             stackMoveDiagonal(this->stackPort, 9.0, 1.0, 0, 12.0, 1.0, 1);
             break;
