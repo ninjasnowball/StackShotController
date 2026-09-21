@@ -43,17 +43,18 @@ int RigController::OpenStack(){
     return serial_port;
 }
 
-RigController::CloseStack() {
+int RigController::CloseStack() {
     stackClose(this->stackPort);
+    return 0;
 }
 
-Position RigController::nextPosition(){
-    std::vector<Position> upDiagVec = {BugOne, BugTwo, BugFour, BugFive};
-    std::vector<Postion> downVec = {CardOne, CardTwo, CardThree, CardFour, CardFive, CardSix};
+RigController::Position RigController::nextPosition(){
+    std::vector<RigController::Position> upDiagVec = {BugOne, BugTwo, BugFour, BugFive};
+    std::vector<RigController::Position> downVec = {CardOne, CardTwo, CardThree, CardFour, CardFive, CardSix};
 
     auto upDiagIt = std::find(upDiagVec.begin(), upDiagVec.end(), this->state);
     auto downIt = std::find(downVec.begin(), downVec.end(), this->state);
-    if(upDaigIt != upDiagVec.end()){
+    if(upDiagIt != upDiagVec.end()){
         //Move up and to the right one box
         stackMoveDiagonal(this->stackPort, 3.0, 0.5, 0, 6.0, 1.0, 0);
     } else if (downIt != downVec.end()){
@@ -67,11 +68,11 @@ Position RigController::nextPosition(){
         stackMoveDiagonal(this->stackPort, 9.0, 0.75, 0, 12.0, 1.0, 1);
     }
 
-    this->state += 1;
+    this->state ++;
     return this->state;
 }
 
-Position RigController::returnToStart(){
+rigcontroller::Position RigController::returnToStart(){
 
     switch(this->state){
         case: CardOne
