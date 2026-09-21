@@ -3,7 +3,6 @@
 #include <string.h>
 #include <iostream>
 
-#include "include/stackcomm.hpp"
 #include "include/rigcontroller.hpp"
 
 int main() {
