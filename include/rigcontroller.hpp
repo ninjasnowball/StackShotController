@@ -1,6 +1,6 @@
 #include "include/stackcomm.hpp"
 
-class StackController{
+class RigController{
     public:
         enum Position{
             CardOne,
@@ -19,8 +19,6 @@ class StackController{
 
         int OpenStack();
 
-        
-
         Position nextPosition();
 
         Position returnToStart();
@@ -33,7 +31,7 @@ class StackController{
         Position state = CardOne;
 };
 
-StackController::OpenStack(){
+int RigController::OpenStack(){
     int serial_port = stackOpen();
 
     if (serial_port < 0) return -1;
@@ -43,11 +41,11 @@ StackController::OpenStack(){
     return serial_port;
 }
 
-StackController::CloseStack() {
+RigController::CloseStack() {
     stackClose(this->stackPort);
 }
 
-Position nextPosition(){
+Position RigController::nextPosition(){
     std::vector<Position> upDiagVec = {BugOne, BugTwo, BugFour, BugFive};
     std::vector<Postion> downVec = {CardOne, CardTwo, CardThree, CardFour, CardFive, CardSix};
 
@@ -71,7 +69,7 @@ Position nextPosition(){
     return this->state;
 }
 
-Position returnToStart(){
+Position RigController::returnToStart(){
 
     switch(this->state){
         case: CardOne
