@@ -41,4 +41,23 @@ StackController::OpenStack(){
     return serial_port;
 }
 
-StackController::CloseStack()
+StackController::CloseStack() {
+    stackClose(this->stackPort);
+}
+
+Position nextPosition(){
+    std::vector<Position> upDiagVec = {BugOne, BugTwo, BugFour, BugFive};
+    std::vector<Postion> downVec = {CardOne, CardTwo, CardThree, CardFour, CardFive, CardSix};
+
+    auto upDiagIt = std::find(upDiagVec.begin(), upDiagVec.end(), this->state);
+    auto downIt = std::find(downVec.begin(), downVec.end(), this->state);
+    if(upDaigIt != upDiagVec.end()){
+        //Move up and to the right one box
+    } else if (downIt != downVec.end()){
+        //Move down one box
+    } else if (state == BugThree){
+        //Move down one and left two boxes
+    } else if (state == BugSix){
+        //Move up three and left two boxes
+    }
+}
