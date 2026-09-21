@@ -17,6 +17,18 @@ class RigController{
             BugSix
         };
 
+        Position& operator++(Position& position) {
+            return position = static_cast<Position>( ++static_cast<int>(position) );
+        }
+
+        Position operator++(Position& position, int) {
+            StackID tmp(position);
+            ++position;
+            return tmp;
+        }
+
+
+
         int OpenStack();
 
         Position nextPosition();
