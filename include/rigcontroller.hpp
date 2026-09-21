@@ -25,6 +25,8 @@ class RigController{
 
         int CloseStack();
 
+        int getState(){ return this->state;}
+
     private:
         int stackPort = -1;
 

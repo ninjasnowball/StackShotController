@@ -4,19 +4,24 @@
 #include <iostream>
 
 #include "include/stackcomm.hpp"
-
+#include "include/rigcontroller.hpp"
 
 int main() {
   std::cout << "Starting program" << std::endl;
+
+  RigController controller;
+
+  controller.OpenStack();
   
-  int serial_port = stackOpen();
+  int current_state = getState();
 
-  if (serial_port < 0) return 1;
+  for (int i = 0; i < 12; i++){
+    current_state = controller.nextPosition();
+    std::this_thread::sleep_for(std::chrono::seconds(5))
+  }
 
-  int move = stackMoveDiagonal(serial_port, 2.0, 0.5, 0, 4.0, 1.0, 1);
-  if (move < 0) return 1;
    
-  stackClose(serial_port);
+  controller.CloseStack();
   
   return 0; // success
 }
