@@ -19,13 +19,26 @@ class StackController{
 
         int OpenStack();
 
-        Position state;
+        
 
         Position nextPosition();
 
         int CloseStack();
 
     private:
-        int stackPort;
+        int stackPort = -1;
 
+        Position state = CardOne;
 };
+
+StackController::OpenStack(){
+    int serial_port = stackOpen();
+
+    if (serial_port < 0) return -1;
+
+    this-> stackPort = serial_port;
+
+    return serial_port;
+}
+
+StackController::CloseStack()

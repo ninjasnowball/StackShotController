@@ -13,7 +13,7 @@ int main() {
 
   if (serial_port < 0) return 1;
 
-  int move = stackMoveDiagonal(serial_port, 2.0, 0.4, 0, 3.0, 1.0, 1);
+  int move = stackMoveDiagonal(serial_port, 2.0, 0.5, 0, 4.0, 1.0, 1);
   if (move < 0) return 1;
    
   stackClose(serial_port);
