@@ -72,7 +72,7 @@ RigController::Position RigController::nextPosition(){
     return this->state;
 }
 
-Rigcontroller::Position RigController::returnToStart(){
+RigController::Position RigController::returnToStart(){
 
     switch(this->state){
         case CardOne:

@@ -12,11 +12,11 @@ int main() {
 
   controller.OpenStack();
   
-  int current_state = getState();
+  int current_state = controller.getState();
 
   for (int i = 0; i < 12; i++){
     current_state = controller.nextPosition();
-    std::this_thread::sleep_for(std::chrono::seconds(5))
+    std::this_thread::sleep_for(std::chrono::seconds(5));
   }
 
    
