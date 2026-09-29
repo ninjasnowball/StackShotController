@@ -17,6 +17,7 @@ class RigController{
             BugSix
         };
 
+        /*
         Position& operator++(Position& position) {
             return position = static_cast<Position>( ++static_cast<int>(position) );
         }
@@ -26,7 +27,7 @@ class RigController{
             ++position;
             return tmp;
         }
-
+        */
 
 
         int OpenStack();
@@ -80,7 +81,7 @@ RigController::Position RigController::nextPosition(){
         stackMoveDiagonal(this->stackPort, 9.0, 0.75, 0, 12.0, 1.0, 1);
     }
 
-    this->state ++;
+    this->state = state + 1;
     return this->state;
 }
 
