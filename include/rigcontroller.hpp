@@ -81,7 +81,7 @@ RigController::Position RigController::nextPosition(){
         stackMoveDiagonal(this->stackPort, 9.0, 0.75, 0, 12.0, 1.0, 1);
     }
 
-    this->state = static_cast<Position> (static_cast<int> state++);
+    this->state = static_cast<Position> (static_cast<int> (state)++);
     return this->state;
 }
 
