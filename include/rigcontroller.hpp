@@ -1,35 +1,22 @@
 #include "stackcomm.hpp"
 
+enum Position{
+    CardOne,
+    BugOne,
+    CardTwo,
+    BugTwo,
+    CardThree,
+    BugThree,
+    CardFour,
+    BugFour,
+    CardFive,
+    BugFive,
+    CardSix,
+    BugSix
+};
+
 class RigController{
     public:
-        enum Position{
-            CardOne,
-            BugOne,
-            CardTwo,
-            BugTwo,
-            CardThree,
-            BugThree,
-            CardFour,
-            BugFour,
-            CardFive,
-            BugFive,
-            CardSix,
-            BugSix
-        };
-
-        /*
-        Position& operator++(Position& position) {
-            return position = static_cast<Position>( ++static_cast<int>(position) );
-        }
-
-        Position operator++(Position& position, int) {
-            Position tmp(position);
-            ++position;
-            return tmp;
-        }
-        */
-
-
         int OpenStack();
 
         Position nextPosition();
@@ -81,7 +68,7 @@ RigController::Position RigController::nextPosition(){
         stackMoveDiagonal(this->stackPort, 9.0, 0.75, 0, 12.0, 1.0, 1);
     }
 
-    this->state = static_cast<Position> (static_cast<int> (state)++);
+    this->state ++;
     return this->state;
 }
 
