@@ -16,9 +16,9 @@ enum Position{
 };
 
 Position& operator++( Position &c ) {
-  using IntType = typename std::underlying_type<Position>::type
+  using IntType = typename std::underlying_type<Position>::type;
   c = static_cast<Position>( static_cast<IntType>(c) + 1 );
-  if ( c == Position::END_OF_LIST )
+  if ( c == Position::BugSix )
     c = static_cast<Position>(0);
   return c;
 }
