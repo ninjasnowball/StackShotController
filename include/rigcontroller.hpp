@@ -15,6 +15,13 @@ enum Position{
     BugSix
 };
 
+// Special behavior for Position ++
+Position operator++( Position &c, int ) {
+  Position result = c;
+  ++c;
+  return result;
+}
+
 class RigController{
     public:
         int OpenStack();
@@ -68,7 +75,7 @@ Position RigController::nextPosition(){
         stackMoveDiagonal(this->stackPort, 9.0, 0.75, 0, 12.0, 1.0, 1);
     }
 
-    this->state = state + 1;
+    this->state ++;
     return this->state;
 }
 
