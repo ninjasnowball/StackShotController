@@ -10,7 +10,7 @@ int main() {
 
   RigController controller;
 
-  controller.OpenStack();
+  if (controller.OpenStack()== -1)return 1;
   
   int current_state = controller.getState();
 
