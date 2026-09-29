@@ -48,9 +48,9 @@ int RigController::CloseStack() {
     return 0;
 }
 
-RigController::Position RigController::nextPosition(){
-    std::vector<RigController::Position> upDiagVec = {BugOne, BugTwo, BugFour, BugFive};
-    std::vector<RigController::Position> downVec = {CardOne, CardTwo, CardThree, CardFour, CardFive, CardSix};
+Position RigController::nextPosition(){
+    std::vector<Position> upDiagVec = {BugOne, BugTwo, BugFour, BugFive};
+    std::vector<Position> downVec = {CardOne, CardTwo, CardThree, CardFour, CardFive, CardSix};
 
     auto upDiagIt = std::find(upDiagVec.begin(), upDiagVec.end(), this->state);
     auto downIt = std::find(downVec.begin(), downVec.end(), this->state);
@@ -72,7 +72,7 @@ RigController::Position RigController::nextPosition(){
     return this->state;
 }
 
-RigController::Position RigController::returnToStart(){
+Position RigController::returnToStart(){
 
     switch(this->state){
         case CardOne:
