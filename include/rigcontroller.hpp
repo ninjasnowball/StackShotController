@@ -82,7 +82,7 @@ Position RigController::nextPosition(){
         stackMoveDiagonal(this->stackPort, CELL_LENGTH*2, 1, 1, CELL_HEIGHT, 0.3, 1);
     } else if (state == BugSix){
         //Move up three and left two boxes
-        stackMoveDiagonal(this->stackPort, CELL_LENGTH * 2, 1.0, 0, CELL_HEIGHT * 3, 0.9, 1);
+        this->returnToStart();
     }
 
     this->state ++;
