@@ -86,6 +86,7 @@ Position RigController::nextPosition(){
     } else if (state == BugSix){
         //Move up three and left two boxes
         this->returnToStart();
+        return this->state;
     }
 
     this->state ++;
