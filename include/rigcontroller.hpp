@@ -41,7 +41,7 @@ class RigController{
 
         int getState(){ return this->state;}
 
-        std::string positionMap[] = {"CardOne","BugOne","CardTwo","BugTwo","CardThree","BugThree","CardFour","BugFour","CardFive","BugFive","CardSix","BugSix"};
+        std::string positionMap[12] = {"CardOne","BugOne","CardTwo","BugTwo","CardThree","BugThree","CardFour","BugFour","CardFive","BugFive","CardSix","BugSix"};
 
     private:
         int stackPort = -1;
