@@ -31,7 +31,7 @@ unsigned char* readStack(int serial_port, ssize_t& num_bytes, int expected){
   ioctl(serial_port, FIONREAD, &bytes);
   while(bytes < expected){
     printf(".");
-    std::this_thread::sleep_for(std::chrono::milliseconds(2));
+    std::this_thread::sleep_for(std::chrono::milliseconds(5));
     ioctl(serial_port, FIONREAD, &bytes);
   }
   printf("\n");
@@ -48,9 +48,11 @@ bool waitStackMove(int serial_port, int axis){
     unsigned char axisAction = ((axisCH << 4 )|(0x00));
     unsigned char msgStatus[] = {0x55,0x10,0x05,axisAction,0x04,0x00,0x00,0x00,0x00,0x69};
     write(serial_port, msgStatus, sizeof(msgStatus));
+    std::this_thread::sleep_for(std::chrono::milliseconds(5));
 
     ssize_t num_bytes;
     unsigned char* response = readStack(serial_port, num_bytes, 10);
+     std::this_thread::sleep_for(std::chrono::milliseconds(5));
 
     /*
     printf("Rail Status: Read %zu bytes. Received message:", num_bytes);
