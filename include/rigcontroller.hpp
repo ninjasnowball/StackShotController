@@ -50,7 +50,7 @@ class RigController{
         Position state = CardOne;
 
         const float CELL_LENGTH = 3.2; //revolutions per cell
-        const float CELL_HEIGHT = 2.0; //revolutions per cell
+        const float CELL_HEIGHT = 1.8; //revolutions per cell
         const float MOVE_SPEED = 0.8; //percentage of speed
 };
 
