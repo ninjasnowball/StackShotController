@@ -76,13 +76,13 @@ Position RigController::nextPosition(){
     auto downIt = std::find(downVec.begin(), downVec.end(), this->state);
     if(upDiagIt != upDiagVec.end()){
         //Move up and to the right one box
-        stackMoveDiagonal(this->stackPort, CELL_LENGTH, 1.0, 0, CELL_HEIGHT, 0.6, 1);
+        stackMoveDiagonal(this->stackPort, CELL_LENGTH, 1.0, 0, CELL_HEIGHT, 0.6, 0);
     } else if (downIt != downVec.end()){
         //Move down one box
-        stackMove(this->stackPort, CELL_HEIGHT, 1.0, 0, 1);
+        stackMove(this->stackPort, CELL_HEIGHT, 1.0, 1, 1);
     } else if (state == BugThree){
         //Move down one and left two boxes
-        stackMoveDiagonal(this->stackPort, CELL_LENGTH*2, 1, 1, CELL_HEIGHT, 0.3, 0);
+        stackMoveDiagonal(this->stackPort, CELL_LENGTH*2, 1, 1, CELL_HEIGHT, 0.3, 1);
     } else if (state == BugSix){
         //Move up three and left two boxes
         this->returnToStart();
