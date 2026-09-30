@@ -79,7 +79,7 @@ Position RigController::nextPosition(){
         stackMoveDiagonal(this->stackPort, CELL_LENGTH, 1.0, 0, CELL_HEIGHT, 0.6, 1);
     } else if (downIt != downVec.end()){
         //Move down one box
-        stackMove(this->stackPort, CELL_HEIGHT, 1.0, 1, 0);
+        stackMove(this->stackPort, CELL_HEIGHT, 1.0, 0, 1);
     } else if (state == BugThree){
         //Move down one and left two boxes
         stackMoveDiagonal(this->stackPort, CELL_LENGTH*2, 1, 1, CELL_HEIGHT, 0.3, 0);
