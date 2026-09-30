@@ -17,7 +17,7 @@ int main() {
   for (int i = 0; i < 12; i++){
     std::this_thread::sleep_for(std::chrono::seconds(2));
     current_state = controller.nextPosition();
-    std::cout << "At position: " << continue.positionMap[current_state];
+    std::cout << "At position: " << controller.positionMap[current_state];
   }
 
    
