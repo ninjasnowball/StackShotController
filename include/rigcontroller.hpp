@@ -83,7 +83,7 @@ Position RigController::nextPosition(){
         stackMove(this->stackPort, CELL_HEIGHT, MOVE_SPEED *1.0, 1, 1);
     } else if (state == BugThree){
         //Move down one and left two boxes
-        stackMoveDiagonal(this->stackPort, CELL_LENGTH*2,MOVE_SPEED 1.0, 1, CELL_HEIGHT,MOVE_SPEED * 0.3, 1);
+        stackMoveDiagonal(this->stackPort, CELL_LENGTH*2,MOVE_SPEED * 1.0, 1, CELL_HEIGHT,MOVE_SPEED * 0.3, 1);
     } else if (state == BugSix){
         //Move up three and left two boxes
         this->returnToStart();
