@@ -49,8 +49,8 @@ class RigController{
 
         Position state = CardOne;
 
-        const float CELL_LENGTH = 3.4; //revolutions per cell
-        const float CELL_HEIGHT = 2.1; //revolutions per cell
+        const float CELL_LENGTH = 3.3; //revolutions per cell
+        const float CELL_HEIGHT = 2.0; //revolutions per cell
 };
 
 int RigController::OpenStack(){
