@@ -108,7 +108,7 @@ Position RigController::returnToStart(){
             break;
         case BugTwo:
             //Move up one and left one
-            stackMoveDiagonal(this->stackPort, CELL_LENGTH, 1.0, 0, CELL_HEIGHT, 0.6, 1);
+            stackMoveDiagonal(this->stackPort, CELL_LENGTH, 1.0, 1, CELL_HEIGHT, 0.6, 1);
             break;
         case CardThree:
             //Move left two
@@ -116,7 +116,7 @@ Position RigController::returnToStart(){
             break;
         case BugThree:
             //Move up one and left two
-            stackMoveDiagonal(this->stackPort, CELL_LENGTH*2, 1.0, 0, CELL_HEIGHT, 0.3, 1);
+            stackMoveDiagonal(this->stackPort, CELL_LENGTH*2, 1.0, 1, CELL_HEIGHT, 0.3, 1);
             break;
         case CardFour:
             //Move up two
@@ -128,19 +128,19 @@ Position RigController::returnToStart(){
             break;
         case CardFive:
             //Move up two and left one
-            stackMoveDiagonal(this->stackPort, CELL_LENGTH, 0.83, 0, CELL_HEIGHT*2, 1.0, 1);
+            stackMoveDiagonal(this->stackPort, CELL_LENGTH, 0.83, 1, CELL_HEIGHT*2, 1.0, 1);
             break;
         case BugFive:
             //Move up three and left one
-            stackMoveDiagonal(this->stackPort, CELL_LENGTH, 0.55, 0, CELL_HEIGHT*3, 1.0, 1);
+            stackMoveDiagonal(this->stackPort, CELL_LENGTH, 0.55, 1, CELL_HEIGHT*3, 1.0, 1);
             break;
         case CardSix:
             //Move up two and left two
-            stackMoveDiagonal(this->stackPort, CELL_LENGTH*2, 1.0, 0, CELL_HEIGHT*2, 0.59, 1);
+            stackMoveDiagonal(this->stackPort, CELL_LENGTH*2, 1.0, 1, CELL_HEIGHT*2, 0.59, 1);
             break;
         case BugSix:
             //Move up three and left two
-            stackMoveDiagonal(this->stackPort, CELL_LENGTH*2, 1.0, 0, CELL_HEIGHT*3, 0.87, 1);
+            stackMoveDiagonal(this->stackPort, CELL_LENGTH*2, 1.0, 1, CELL_HEIGHT*3, 0.87, 1);
             break;
     }
 
