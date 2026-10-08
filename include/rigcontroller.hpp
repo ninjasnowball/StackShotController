@@ -50,8 +50,8 @@ class RigController{
         Position state = CardOne;
 
         const float CELL_LENGTH = 3.2; //revolutions per cell
-        const float CELL_HEIGHT = 1.8; //revolutions per cell
-        const float MOVE_SPEED = 0.8; //percentage of speed
+        const float CELL_HEIGHT = 2.0; //revolutions per cell
+        const float MOVE_SPEED = 1.0; //percentage of speed
 };
 
 int RigController::OpenStack(){
@@ -77,13 +77,13 @@ Position RigController::nextPosition(){
     auto downIt = std::find(downVec.begin(), downVec.end(), this->state);
     if(upDiagIt != upDiagVec.end()){
         //Move up and to the right one box
-        stackMoveDiagonal(this->stackPort, CELL_LENGTH, MOVE_SPEED * 1.0, 0, CELL_HEIGHT, MOVE_SPEED * 0.6, 0);
+        stackMoveDiagonal(this->stackPort, CELL_LENGTH, MOVE_SPEED * 1.0, 0, CELL_HEIGHT, MOVE_SPEED * 0.588, 0);
     } else if (downIt != downVec.end()){
         //Move down one box
         stackMove(this->stackPort, CELL_HEIGHT, MOVE_SPEED *1.0, 1, 1);
     } else if (state == BugThree){
         //Move down one and left two boxes
-        stackMoveDiagonal(this->stackPort, CELL_LENGTH*2,MOVE_SPEED * 1.0, 1, CELL_HEIGHT,MOVE_SPEED * 0.3, 1);
+        stackMoveDiagonal(this->stackPort, CELL_LENGTH*2,MOVE_SPEED * 1.0, 1, CELL_HEIGHT,MOVE_SPEED * 0.294, 1);
     } else if (state == BugSix){
         //Move up three and left two boxes
         this->returnToStart();
@@ -109,7 +109,7 @@ Position RigController::returnToStart(){
             break;
         case BugTwo:
             //Move up one and left one
-            stackMoveDiagonal(this->stackPort, CELL_LENGTH, MOVE_SPEED *1.0, 1, CELL_HEIGHT,MOVE_SPEED * 0.6, 0);
+            stackMoveDiagonal(this->stackPort, CELL_LENGTH, MOVE_SPEED *1.0, 1, CELL_HEIGHT,MOVE_SPEED * 0.588, 0);
             break;
         case CardThree:
             //Move left two
@@ -117,7 +117,7 @@ Position RigController::returnToStart(){
             break;
         case BugThree:
             //Move up one and left two
-            stackMoveDiagonal(this->stackPort, CELL_LENGTH*2,MOVE_SPEED * 1.0, 1, CELL_HEIGHT,MOVE_SPEED * 0.3, 0);
+            stackMoveDiagonal(this->stackPort, CELL_LENGTH*2,MOVE_SPEED * 1.0, 1, CELL_HEIGHT,MOVE_SPEED * 0.294, 0);
             break;
         case CardFour:
             //Move up two
@@ -129,19 +129,19 @@ Position RigController::returnToStart(){
             break;
         case CardFive:
             //Move up two and left one
-            stackMoveDiagonal(this->stackPort, CELL_LENGTH,MOVE_SPEED * 0.83, 1, CELL_HEIGHT*2,MOVE_SPEED * 1.0,0);
+            stackMoveDiagonal(this->stackPort, CELL_LENGTH,MOVE_SPEED * 0.8, 1, CELL_HEIGHT*2,MOVE_SPEED * 1.0,0);
             break;
         case BugFive:
             //Move up three and left one
-            stackMoveDiagonal(this->stackPort, CELL_LENGTH,MOVE_SPEED * 0.55, 1, CELL_HEIGHT*3,MOVE_SPEED * 1.0, 0);
+            stackMoveDiagonal(this->stackPort, CELL_LENGTH,MOVE_SPEED * 0.533, 1, CELL_HEIGHT*3,MOVE_SPEED * 1.0, 0);
             break;
         case CardSix:
             //Move up two and left two
-            stackMoveDiagonal(this->stackPort, CELL_LENGTH*2,MOVE_SPEED * 1.0, 1, CELL_HEIGHT*2,MOVE_SPEED * 0.59, 0);
+            stackMoveDiagonal(this->stackPort, CELL_LENGTH*2,MOVE_SPEED * 1.0, 1, CELL_HEIGHT*2,MOVE_SPEED * 0.625, 0);
             break;
         case BugSix:
             //Move up three and left two
-            stackMoveDiagonal(this->stackPort, CELL_LENGTH*2,MOVE_SPEED * 1.0, 1, CELL_HEIGHT*3,MOVE_SPEED * 0.87, 0);
+            stackMoveDiagonal(this->stackPort, CELL_LENGTH*2,MOVE_SPEED * 1.0, 1, CELL_HEIGHT*3,MOVE_SPEED * 0.968, 0);
             break;
     }
 
