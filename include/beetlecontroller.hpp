@@ -9,7 +9,7 @@ enum Position{
 
 Position& operator++( Position &c ) {
   using IntType = typename std::underlying_type<Position>::type;
-  if ( c == Position::BugSix )
+  if ( c == Position::PhotoFour )
     c = static_cast<Position>(0);
   else
     c = static_cast<Position>( static_cast<IntType>(c) + 1 );
@@ -34,12 +34,12 @@ class RigController{
 
         int getState(){ return this->state;}
 
-        std::string positionMap[] = {};
+        std::string positionMap[4] = {"PhotoOne","PhotoTwo","PhotoThree","PhotoFour"};
 
     private:
         int stackPort = -1;
 
-        Position state = ;
+        Position state = PhotoOne;
 
 };
 
@@ -60,7 +60,7 @@ int RigController::CloseStack() {
 
 Position RigController::nextPosition(){
     
-    if (state == BugSix){
+    if (state == PhotoFour){
         this->returnToStart();
         return this->state;
     }
